@@ -17,3 +17,5 @@ Edits stay in this browser. Reset restores the fictional catalogue. The app need
 ![Repair Prices catalogue and sample services](preview.png)
 
 [Try the browser demo](https://repair-price-matrix-demo.ranakaharian1.workers.dev/).
+
+The hosted demo uses the original matrix layout and supports a customer view, editable device rows and a quote calculator. The classic edition is in the classic folder.
