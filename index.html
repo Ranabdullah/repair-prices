@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Repair Prices · Local Demo</title><link rel="stylesheet" href="style.css"><script defer src="app.js"></script></head>
+<body><header><div><strong>Repair Prices</strong><span class="tag">Local demo</span></div><nav aria-label="Sections"><button data-view="catalogue">Price list</button><button data-view="estimate">Calculator</button><button data-view="settings">Pricing settings</button></nav></header>
+<main><div class="intro"><div><h1 id="title">Price list</h1><p class="muted">Fictional price list · changes stay in this browser.</p></div><button id="reset">Reset sample data</button></div><p id="message" role="status"></p>
+<section id="catalogue" data-panel>
+<div class="filters"><label>Find a device or repair<input id="search" type="search" placeholder="Model, brand or service"></label><label>Brand<select id="brand"></select></label><label class="check"><input id="customer" type="checkbox"> Customer view</label><div class="actions"><button id="add">Add repair</button><button id="print">Print customer list</button></div></div>
+<div class="table-wrap"><table><thead><tr><th>Brand</th><th>Device</th><th>Repair</th><th>Price</th><th class="internal">Part cost</th><th class="internal">Profit</th><th class="internal">Actions</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section id="estimate" data-panel hidden><h2>Repair quote calculator</h2><p class="muted">Enter your part cost and shipping quote, then compare a selling price with your margin target.</p>
+<form id="estimateForm"><div class="fields"><label>Part cost (€)<input name="cost" required type="number" min="0" max="100000" step="0.01" value="40"></label>
+<label>Shipping (€)<input name="shipment" required type="number" min="0" max="100000" step="0.01"></label>
+<label>Selling price (€)<input name="price" required type="number" min="0.01" max="1000000" step="0.01" value="105"></label></div>
+<button type="button" id="useSuggestion">Use suggested price</button></form><div id="estimateResult" class="stats" aria-live="polite"></div></section>
+<section id="settings" data-panel hidden><h2>Pricing settings</h2><p class="muted">Set the assumptions used for the price list and calculator.</p><form id="settingsForm"><div class="fields">
+<label>VAT %<input name="vat" required type="number" min="0" max="100" step="0.01"></label>
+<label>Labour (€)<input name="labour" required type="number" min="0" max="100000" step="0.01"></label>
+<label>Default shipping (€)<input name="shipment" required type="number" min="0" max="100000" step="0.01"></label>
+<label>Target margin %<input name="margin" required type="number" min="0" max="99.99" step="0.01"></label>
+<label>VAT method<select name="method"><option value="inclusive">VAT included in selling price</option><option value="legacy">Deduct a percentage of selling price</option></select></label></div>
+<button>Save settings</button></form></section>
+</main>
+<dialog id="repairDialog" aria-labelledby="repairTitle"><form id="repairForm"><h2 id="repairTitle">Add repair</h2><div class="fields">
+<label>Brand<input name="brand" required maxlength="60"></label><label>Device<input name="model" required maxlength="80"></label><label>Repair service<input name="repair" required maxlength="80"></label>
+<label>Part cost (€)<input name="cost" required type="number" min="0" max="100000" step="0.01"></label>
+<label>Selling price (€)<input name="price" required type="number" min="0.01" max="1000000" step="0.01"></label></div><button>Save repair</button> <button id="cancel" type="button">Cancel</button></form></dialog></body></html>
