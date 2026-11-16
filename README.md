@@ -15,3 +15,5 @@ The default VAT mode divides the selling price by one plus the rate to calculate
 Edits stay in this browser. Reset restores the fictional catalogue. The app needs no user account or internet connection when run locally.
 
 ![Repair Prices catalogue and sample services](preview.png)
+
+[Try the browser demo](https://repair-price-matrix-demo.ranakaharian1.workers.dev/).
